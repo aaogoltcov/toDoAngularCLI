@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Item } from './/src/app/item';
+// @ts-ignore
+import { Item } from '../item';
 
 @Component({
   selector: 'app-item',
@@ -11,10 +12,11 @@ export class ItemComponent {
   editable = false;
 
   @Input() item: Item;
+  // @ts-ignore
   @Input() newItem: string;
   @Output() remove = new EventEmitter<Item>();
 
-  saveItem(description) {
+  saveItem({description}: { description: any }) {
     if (!description) return;
     this.editable = false;
     this.item.description = description;

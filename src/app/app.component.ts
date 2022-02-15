@@ -32,6 +32,7 @@ export class AppComponent {
     });
   }
 
+  // @ts-ignore
   remove(item) {
     this.allItems.splice(this.allItems.indexOf(item), 1);
   }
