@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// @ts-ignore
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-root',
@@ -29,5 +30,9 @@ export class AppComponent {
       description,
       done: false
     });
+  }
+
+  remove(item) {
+    this.allItems.splice(this.allItems.indexOf(item), 1);
   }
 }
